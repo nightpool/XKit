@@ -1109,9 +1109,12 @@ XKit.extensions.xinbox = new Object({
 			current = new_blogs;
 		} else {
 			current = current.split(";");
-			var set = new Set(current);
+			var set = {};
+			current.forEach(function(i){
+				set[i] = true;
+			});
 			new_blogs.forEach(function(i) {
-				if (!set.has(i)) {
+				if (!set[i]) {
 					current.push(i);
 				}
 			});
