@@ -1,5 +1,5 @@
 //* TITLE Mass+ **//
-//* VERSION 0.4.2 **//
+//* VERSION 0.4.3 **//
 //* DESCRIPTION Enhancements for the Mass Editor **//
 //* DETAILS This extension allows you to select multiple posts by once, by type or month. It also comes with visual enhancements for the mass post editor, such as selected post count and more! **//
 //* DEVELOPER STUDIOXENIX **//
@@ -23,7 +23,7 @@ XKit.extensions.mass_plus = new Object({
 	},
 	run: function() {
 		this.running = true;
-		if (document.location.href.indexOf('://www.tumblr.com/mega-editor/') !== -1 && $("#nav_archive").length > 0) {
+		if (document.location.href.indexOf('://www.tumblr.com/mega-editor') !== -1 && $("#nav_archive").length > 0) {
 			if (document.location.href.indexOf('://www.tumblr.com/activity') !== -1) {return; }
 			XKit.tools.init_css("mass_plus");
 			XKit.extensions.mass_plus.do();
@@ -167,7 +167,7 @@ XKit.extensions.mass_plus = new Object({
 		if (last_timestamp.indexOf(" ") !== -1) {
 			last_timestamp = last_timestamp.substring(0, last_timestamp.indexOf(" "));
 		}
-		var blog_shortname = document.location.href.substring(document.location.href.indexOf('mega-editor/') + 12);
+		var blog_shortname = document.location.href.substring(document.location.href.indexOf('mega-editor') + 12);
 		if (blog_shortname .indexOf("/") !== -1) { blog_shortname = blog_shortname.substring(0, blog_shortname.indexOf("/")); }
 		if (blog_shortname .indexOf("?") !== -1) { blog_shortname = blog_shortname.substring(0, blog_shortname.indexOf("?")); }
 		if (blog_shortname .indexOf("#") !== -1) { blog_shortname = blog_shortname.substring(0, blog_shortname.indexOf("#")); }
