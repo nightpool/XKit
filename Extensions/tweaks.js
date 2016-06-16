@@ -661,11 +661,11 @@ XKit.extensions.tweaks = new Object({
 				}
 			}
 
-			var x_html = '<a class=\"xkit-small-blog-setting-link\" href="/blog/' + user_url.replace("/","") + '/settings/" target="_blog_settings">Blog Settings</a>';
+			var x_html = '<a class=\"xkit-small-blog-setting-link\" href="/blog/' + user_url.replace("/","") + '/settings/">Blog Settings</a>';
 			if (add_mega_link) {
 				x_html = '<div class="small_links by-xkit">' +
-											'<a href="/mega-editor/' + user_url + '" target="_mass_post_editor">Mass Post Editor</a>' +
-											'<a href="/blog/' + user_url.replace("/","") + '/settings/" target="_mass_post_editor">Blog Settings</a>' +
+											'<a href="/mega-editor/' + user_url + '">Mass Post Editor</a>' +
+											'<a href="/blog/' + user_url.replace("/","") + '/settings/">Blog Settings</a>' +
 						'</div>';
 			}
 			if ($(".small_links").length > 0 && !add_mega_link) {
@@ -676,7 +676,7 @@ XKit.extensions.tweaks = new Object({
 					$("#dashboard_controls_open_blog").after(x_html);
 				} else {
 					// Otherwise just tack it onto the end of the right column's controls
-					$(".controls_section:last").after(x_html);
+					$(".controls_section:first").after(x_html);
 				}
 			}
 		}
