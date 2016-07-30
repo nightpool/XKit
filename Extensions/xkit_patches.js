@@ -1,5 +1,5 @@
 //* TITLE XKit Patches **//
-//* VERSION 6.4.1 **//
+//* VERSION 6.5.0 **//
 //* DESCRIPTION Patches framework **//
 //* DEVELOPER new-xkit **//
 
@@ -494,6 +494,24 @@ XKit.tools.getParameterByName = function(name){
 					}
 				}, true); // uses .parent() and capturing to pre-empty tumblr's js
 			});
+		}, true, {});
+
+		XKit.tools.add_function(function fix_jk_scrolling() {
+
+			if (!window._ || !window.jQuery){
+				return;
+			}
+
+			if (_.get(window,"Tumblr.KeyCommands.update_post_positions")) {
+				Tumblr.KeyCommands.update_post_positions = _.wrap(Tumblr.KeyCommands.update_post_positions,
+					function(wrapped, _event) {
+						wrapped.call(this);
+						this.post_positions = _.pick(this.post_positions,
+							function(scroll_pos, element_id) {
+								return !!document.getElementById(element_id);
+							});
+					});
+			}
 		}, true, {});
 
 		setTimeout(function() {
