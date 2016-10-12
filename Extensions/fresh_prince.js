@@ -39,7 +39,8 @@ XKit.extensions.fresh_prince = new Object({
 		XKit.tools.add_css(".l-header-container, .l-container, .l-footer-container {" +
 				"transform: rotate(180deg);" +
 				"-webkit-transform: rotate(180deg);" +
-			"}", "fresh_prince");
+			"}" +
+			".post-forms-glass.active { display: none; }", "fresh_prince");
 		this.remove_fastdash();
 	},
 
