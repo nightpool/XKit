@@ -351,10 +351,10 @@ XKit.extensions.tweaks = new Object({
 		}
 
 		if (XKit.extensions.tweaks.preferences.grey_urls.value) {
-			XKit.extensions.tweaks.add_css(".xkit-outbox-link, "+
-				".post_full .post_header .post_info .post_info_link:first-child, "+
+			XKit.extensions.tweaks.add_css(".xkit-outbox-link, " +
+				".post_full .post_header .post_info .post_info_link:first-child, " +
 				".post_full .post_content .reblog-list-item .reblog-header .reblog-tumblelog-name, " +
-				".post-form--header .tumblelog-select .caption, "+
+				".post-form--header .tumblelog-select .caption, " +
 				".post_brick .post_header .post_info_tumblelog {color: #A1A1A1 !important; }", "xkit_tweaks_grey_urls");
 		}
 
